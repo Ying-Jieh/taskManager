@@ -69,4 +69,18 @@ Source: https://www.youtube.com/watch?v=qwfE7fSVaZM&ab_channel=freeCodeCamp.org
 
 
 ## Mongoose
-We can surely use the native MongoDB package in out app, but `mongoose` provides pretty straightforward API to access mongobd, so we'll use `mongoose` in out app. Checkout mongoos docs if the version is different.
+We can surely use the native MongoDB package in out app, but `mongoose` provides pretty straightforward API to access mongobd, so we'll use `mongoose` in out app. Checkout [mongoos docs](https://mongoosejs.com/docs/models.html) if the version is different.
+
+### mongoose.model()
+When you call mongoose.model() on a schema, Mongoose compiles a model for you.
+
+### mongoose.Schema
+We can use mongoose.Schema() to retrict the data schema
+
+### Queries
+After we have the mongoose model, we can use some methods like model.find(), model.findOne(), findOneAndDelete()... to operate HTTP requests and update the MongoDB.
+
+### test with postman
+When we want to get or update data, we need the `_id`, and we can get them by `getAllTasks()`. Use `GET` in postman to get all the data info.
+
+We need to add `/<_id>` to the path to update or delete it
