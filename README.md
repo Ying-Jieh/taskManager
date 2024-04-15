@@ -7,12 +7,13 @@ Source: https://www.youtube.com/watch?v=qwfE7fSVaZM&ab_channel=freeCodeCamp.org
 - Type `npm start` terminal.
 
 ## Files
-- `public`: The html, css, js files
+- `public`: The html, css, js files. Mainly use `axios` to implement http requestes.
 - `app.js`: The main js file, managing the url and middlewares
 - `routes/tasks.js`: Use the route functions in controllers, setup the routes
 - `controllers/tasks.js`: Implement the route functions
 - `db/connect.js`: Use mongoose to connect to MongoDB
 - `models/Tasks.js`: Setup schema for database with mongoose
+- `middleware/not-found.js`: Set the reponse when the route doesn't exist
 
 
 ## Test with `postman`
@@ -84,3 +85,25 @@ After we have the mongoose model, we can use some methods like model.find(), mod
 When we want to get or update data, we need the `_id`, and we can get them by `getAllTasks()`. Use `GET` in postman to get all the data info.
 
 We need to add `/<_id>` to the path to update or delete it
+
+
+### PUT v.s PATCH
+- PUT: replace the whole items
+- PATCH: replace the provided items
+- e.g. We have 
+```
+{
+    "name": "testName1",
+    "status": "states1"
+}
+```
+
+If we use `PUT` and send
+```
+{
+    "name": "PUTName1"
+}
+```
+
+The `"status": "status1"` will gone
+But If we use `PTACH`, The `"status": "states1"` will still be there, because `PATCH` only update the given items. But if we use `mongoose` and set a default value to the item in `mongoose.Schema`, the item will be the default value when we use `PUT`.

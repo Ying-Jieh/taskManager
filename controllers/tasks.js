@@ -5,8 +5,10 @@ const getAllTasks = async (req, res) => {
     try {
         const tasks = await Task.find({}) // get all the doc in the Task collection
         res.status(200).json({ tasks })
+        // res.status(200).json({ success:true, data:{tasks}, amount: tasks.length }) // we can response with more info
     } catch (error) {
         res.status(500).json({ msg:error })
+        // res.status(500).json({ success:false, msg:error })
     }
 } 
 
@@ -65,10 +67,11 @@ const deleteTask = async (req, res) => {
     }
 }
 
+
 module.exports = {
     getAllTasks,
     createTask,
     getTask,
     updateTask,
-    deleteTask
+    deleteTask,
 }
