@@ -107,3 +107,8 @@ If we use `PUT` and send
 
 The `"status": "status1"` will gone
 But If we use `PTACH`, The `"status": "states1"` will still be there, because `PATCH` only update the given items. But if we use `mongoose` and set a default value to the item in `mongoose.Schema`, the item will be the default value when we use `PUT`.
+
+
+### Use middleware to wrape up try-catch blocks
+1. create `middleware/async.js` and define `asyncWrapper`, which take a function as an argument, and return a try-catch function.
+2. In the `controllers/tasks.js`, import the `asyncWrapper` 
