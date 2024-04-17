@@ -14,6 +14,8 @@ Source: https://www.youtube.com/watch?v=qwfE7fSVaZM&ab_channel=freeCodeCamp.org
 - `db/connect.js`: Use mongoose to connect to MongoDB
 - `models/Tasks.js`: Setup schema for database with mongoose
 - `middleware/not-found.js`: Set the reponse when the route doesn't exist
+- `middleware/async.js`: Wrape the try-catch blocks
+- `middleware/error-handler.js`: Handle errors using express.js
 
 
 ## Test with `postman`
