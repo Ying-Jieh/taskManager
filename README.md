@@ -16,6 +16,7 @@ Source: https://www.youtube.com/watch?v=qwfE7fSVaZM&ab_channel=freeCodeCamp.org
 - `middleware/not-found.js`: Set the reponse when the route doesn't exist
 - `middleware/async.js`: Wrape the try-catch blocks
 - `middleware/error-handler.js`: Handle errors using express.js
+- `errors/custom-error.js`: For define a custom error class
 
 
 ## Test with `postman`
@@ -114,3 +115,9 @@ But If we use `PTACH`, The `"status": "states1"` will still be there, because `P
 ### Use middleware to wrape up try-catch blocks
 1. create `middleware/async.js` and define `asyncWrapper`, which take a function as an argument, and return a try-catch function.
 2. In the `controllers/tasks.js`, import the `asyncWrapper` 
+
+### Use custom error message
+1. In `errors/custom-error.js`, create custom error class which subclass Error from express
+2. In `middleware/error-handler.js`, define error handler middler and use the custom error object
+3. In `app.js`, use the `app.use(errorHandlerMiddleware)`; 
+4. In `controllers/tasks.js`, use the custom error object to handle errors.

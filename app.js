@@ -15,7 +15,9 @@ app.use('/api/v1/tasks', tasks);
 app.use(notFound); // when the route doesn't exist
 app.use(errorHandlerMiddleware); // How express.js handle errors
 
-const port = 3000;
+// Use process.env.PORT for setting specified port, or 3000 by default
+// PORT=6000 node app.js
+const port = process.env.PORT || 3000;
 
 const start = async () => {
     try {
